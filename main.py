@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import psycopg2 # Para conectar con Postgres
 
 
 # Se instancia la clase Flask en la variable [app]
 # Para tener todos los métodos dentro de una sola variable
 app = Flask(__name__)
+CORS(app)
 
 # Connect to the database
 conn = psycopg2.connect(
